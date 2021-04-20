@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons-list.component.css']
 })
 export class PokemonsListComponent implements OnInit {
+  countries = [
+    {
+      id: 1
+    },
+    {id: 2}
+  ]
 
   constructor() { }
 
