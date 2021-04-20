@@ -1,3 +1,4 @@
+import { PokemonsService } from './../../../shared/services/pokemons.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons-list.component.css']
 })
 export class PokemonsListComponent implements OnInit {
-  countries = [
-    {
-      id: 1
-    },
-    {id: 2}
-  ]
+  pokemons = [
+    {name: 'ivysaur'},
+    {name: 'venusaur'}
+  ];
+  columns: Array<any>;
 
-  constructor() { }
+  constructor(
+    private pokemonsService: PokemonsService
+  ) { }
 
   ngOnInit(): void {
+    this.columns = this.pokemonsService.columns();
   }
 
 }

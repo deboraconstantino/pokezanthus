@@ -1,21 +1,15 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col">#</th>
-    <th scope="col">Country</th>
-    <th scope="col">Area</th>
-    <th scope="col">Population</th>
+    <th scope="col" *ngFor="let column of columns">{{ column }}</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let country of countries; index as i">
-    <th scope="row">{{ i + 1 }}</th>
+  <tr *ngFor="let pokemon of pokemons; index as i">
+    <!-- <th scope="row">{{ i + 1 }}</th> -->
     <td>
-      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
-      {{ country.name }}
+      <a routerLink="/">{{ pokemon.name }}</a>
     </td>
-    <td>{{ country.area | number }}</td>
-    <td>{{ country.population | number }}</td>
   </tr>
   </tbody>
 </table>
