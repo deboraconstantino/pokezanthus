@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pokemons-form',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons-form.component.css']
 })
 export class PokemonsFormComponent implements OnInit {
+  pokeForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.buildPokeForm();
+  }
+
+  private buildPokeForm(): void {
+    this.pokeForm = this.formBuilder.group({
+      id: [null],
+      name: [null],
+      type: [null],
+      height: [null],
+      weight: [null],
+      image: [null],
+      ability: [null]
+    });
   }
 
 }

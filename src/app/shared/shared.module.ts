@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { MenuComponent } from './components/menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { MenuComponent } from './components/menu/menu.component';
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     MenuComponent

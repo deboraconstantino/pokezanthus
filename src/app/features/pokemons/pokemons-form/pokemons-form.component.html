@@ -1,1 +1,21 @@
-<p>pokemons-form works!</p>
+<form [formGroup]="pokeForm">
+  <div class="card">
+    <div class="card-header">
+      Informações sobre o pokemon
+    </div>
+
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+
+        <div class="form-group col-md -8">
+          <label for="description">Tipo</label>
+          <input type="text" class="form-control" id="description" formControlName="type">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
