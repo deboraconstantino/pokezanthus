@@ -13,18 +13,19 @@
       <a [routerLink]="pokemon?.id">{{ pokemon?.name }}</a>
     </td>
     <td>
-      <a type="link" (click)="openTypes(content)">Visualizar</a>
+      <a type="link" href="#" (click)="openTypes(content)">Visualizar</a>
       <ng-template #content let-modal>
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Tipos</h4>
-          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+          <button type="button" class="close float-right" aria-label="Close" (click)="modal.dismiss()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p *ngFor="let type of pokemon?.types; index as i">
-            <strong>{{i}} - </strong> {{ type.type.name }}
-          </p>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let type of pokemon?.types; index as i">
+              <strong>{{i}} - </strong> {{ type.type.name }}
+            </li>
+          </ul>
         </div>
       </ng-template>
     </td>

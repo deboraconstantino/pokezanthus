@@ -23,17 +23,18 @@ export class PokemonsListComponent implements OnInit {
     this.pokemons = this.pokemonsService.getAll(0, 10);
   }
 
-  openTypes(content) {
-    this.modalService.open(content)
+  openTypes(content): void {
+    this.modalService.open(content);
+    console.log(this.pokemons);
   }
 
   next(): void {
-    this.offset += 10
+    this.offset += 10;
     this.pokemons = this.pokemonsService.getAll(this.offset, 10);
   }
 
   previous(): void {
-    this.offset -= 10
+    this.offset -= 10;
     this.pokemons = this.pokemonsService.getAll(this.offset, 10);
   }
 
