@@ -30,6 +30,7 @@ export class PokemonsService {
           b => {
             pokemons.push(b);
             pokemons.sort((x, y) => x.id < y.id ? -1 : x.id > y.id ? 1 : 0);
+            console.log(pokemons);
           }
         )
       )

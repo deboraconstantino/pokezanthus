@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 
-describe('MenuComponent', () => {
+describe('o HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
@@ -19,7 +19,7 @@ describe('MenuComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve ser instanciado', () => {
     expect(component).toBeTruthy();
   });
 });

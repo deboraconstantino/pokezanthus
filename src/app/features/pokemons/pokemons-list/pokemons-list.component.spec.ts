@@ -1,13 +1,17 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonsListComponent } from './pokemons-list.component';
 
-describe('PokemonsListComponent', () => {
+describe('O componente PokemonsListComponent', () => {
   let component: PokemonsListComponent;
   let fixture: ComponentFixture<PokemonsListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule
+      ],
       declarations: [ PokemonsListComponent ]
     })
     .compileComponents();
@@ -19,7 +23,7 @@ describe('PokemonsListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve ser instanciado', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -41,9 +41,9 @@ export class PokemonsFormComponent implements OnInit {
     this.pokemonsService.getById(pokeId).subscribe(
       res => {
         this.pokemon = res,
-        this.pokeForm.patchValue(this.pokemon)
+        this.pokeForm.patchValue(this.pokemon);
       },
       err => console.log(err)
-    )
+    );
   }
 }
