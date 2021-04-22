@@ -38,6 +38,13 @@
   </tbody>
 </table>
 
-<div class="container d-flex justify-content-center">
-  <button type="button" class="btn btn-outline-primary mb-2" (click)="showMore()">Carregar mais dados</button>
+<div class="container d-flex justify-content-center mb-2">
+  <a class="page-link" aria-label="Previous" (click)="previous()">
+    <span aria-hidden="true">&laquo;</span>
+    <span class="sr-only">Voltar</span>
+  </a>
+  <a class="page-link" aria-label="Next" (click)="next()">
+    <span aria-hidden="true">&raquo;</span>
+    <span class="sr-only">Avançar</span>
+  </a>
 </div>

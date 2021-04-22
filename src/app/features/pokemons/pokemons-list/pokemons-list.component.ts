@@ -1,9 +1,6 @@
-import { element } from 'protractor';
 import { PokemonsService } from './../../../shared/services/pokemons.service';
 import { Component, OnInit } from '@angular/core';
-import { mergeMap, map } from 'rxjs/operators';
-import { Observable, Subscription, forkJoin } from 'rxjs';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pokemons-list',
@@ -13,6 +10,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class PokemonsListComponent implements OnInit {
   pokemons: Array<any>;
   columns: Array<any>;
+  offset = 0;
   limit = 10;
 
   constructor(
@@ -29,9 +27,14 @@ export class PokemonsListComponent implements OnInit {
     this.modalService.open(content)
   }
 
-  showMore(): void {
-    this.limit += 10;
-    this.pokemons = this.pokemonsService.getAll(0, this.limit);
+  next(): void {
+    this.offset += 10
+    this.pokemons = this.pokemonsService.getAll(this.offset, 10);
+  }
+
+  previous(): void {
+    this.offset -= 10
+    this.pokemons = this.pokemonsService.getAll(this.offset, 10);
   }
 
 }
