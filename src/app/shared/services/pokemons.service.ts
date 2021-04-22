@@ -17,12 +17,8 @@ export class PokemonsService {
     return ['#', 'Nome', 'Tipo', 'Altura', 'Peso'];
   }
 
-  get(): Observable<any> {
-    return this.http.get(this.URL);
-  }
-
-  getInfo(pokemon: any): Observable<any> {
-    return this.http.get(pokemon.url);
+  getById(id: string): Observable<any> {
+    return this.http.get(`${this.URL}${id}`);
   }
 
   getAll(): Array<any> {
@@ -40,5 +36,13 @@ export class PokemonsService {
     );
 
     return pokemons;
+  }
+
+  private get(): Observable<any> {
+    return this.http.get(this.URL);
+  }
+
+  private getInfo(pokemon: any): Observable<any> {
+    return this.http.get(pokemon.url);
   }
 }
