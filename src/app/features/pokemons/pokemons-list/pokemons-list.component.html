@@ -13,11 +13,11 @@
       <a [routerLink]="pokemon?.id">{{ pokemon?.name }}</a>
     </td>
     <td>
-      <a type="link" (click)="open(content)">Visualizar</a>
+      <a type="link" (click)="openTypes(content)">Visualizar</a>
       <ng-template #content let-modal>
         <div class="modal-header">
           <h4 class="modal-title" id="modal-basic-title">Tipos</h4>
-          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -37,3 +37,7 @@
   </tr>
   </tbody>
 </table>
+
+<div class="container d-flex justify-content-center">
+  <button type="button" class="btn btn-outline-primary mb-2" (click)="showMore()">Carregar mais dados</button>
+</div>

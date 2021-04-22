@@ -13,7 +13,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class PokemonsListComponent implements OnInit {
   pokemons: Array<any>;
   columns: Array<any>;
-  closeResult;
+  limit = 10;
 
   constructor(
     private pokemonsService: PokemonsService,
@@ -22,25 +22,16 @@ export class PokemonsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.columns = this.pokemonsService.columns();
-    this.pokemons = this.pokemonsService.getAll();
+    this.pokemons = this.pokemonsService.getAll(0, 10);
   }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+  openTypes(content) {
+    this.modalService.open(content)
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+  showMore(): void {
+    this.limit += 10;
+    this.pokemons = this.pokemonsService.getAll(0, this.limit);
   }
 
 }

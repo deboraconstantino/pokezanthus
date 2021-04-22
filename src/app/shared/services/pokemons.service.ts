@@ -21,10 +21,10 @@ export class PokemonsService {
     return this.http.get(`${this.URL}${id}`);
   }
 
-  getAll(): Array<any> {
+  getAll(page: number, pageSize: number): Array<any> {
     const pokemons = [];
 
-    this.get().subscribe(
+    this.get(page, pageSize).subscribe(
       res => res.results.map(
         a => this.getInfo(a).subscribe(
           b => {
@@ -38,8 +38,8 @@ export class PokemonsService {
     return pokemons;
   }
 
-  private get(): Observable<any> {
-    return this.http.get(this.URL);
+  private get(page: number, pageSize: number): Observable<any> {
+    return this.http.get(`${this.URL}?offset=${page}&limit=${pageSize}`);
   }
 
   private getInfo(pokemon: any): Observable<any> {
