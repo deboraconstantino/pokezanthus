@@ -1,27 +1,13 @@
 # PokeZanthus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+PokeZanthus será uma futura nova cidade do universo pokémon! Para que isso ocorra, foi necessário desenvolver uma Single Page Application (SPA), para que fosse possível retornar os dados dos Pokemons que habitarão a nova cidade.
 
-## Development server
+## Testando a aplicação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Rodar o comando git clone https://github.com/deboraconstantino/pokezanthus.git no cmd ou terminal do VS Code para copiar o repositório remoto para um repositório local
+2. Na pasta do projeto clonado, rodar o comando npm install para baixar todas as dependências necessárias
+3. Na pasta do projeto clonado, rodar o comando ng serve --prod ou ng serve para subir a aplicação
 
-## Code scaffolding
+## Executando testes unitários
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para executar os testes unitários, rodar o comando ng test na pasta do projeto clonado.
