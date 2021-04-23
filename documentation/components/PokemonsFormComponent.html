@@ -569,16 +569,9 @@ export class PokemonsFormComponent implements OnInit {
           &lt;img [src]&#x3D;&quot;pokemon?.sprites.front_default&quot;/&gt;
         &lt;/div&gt;
 
-        &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
           &lt;label for&#x3D;&quot;name&quot;&gt;Nome&lt;/label&gt;
           &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;name&quot; formControlName&#x3D;&quot;name&quot; readonly&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;form-group col-md-2&quot;&gt;
-          &lt;label for&#x3D;&quot;type&quot;&gt;Tipo&lt;/label&gt;
-          &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect01&quot; formControlName&#x3D;&quot;type&quot;&gt;
-            &lt;option *ngFor&#x3D;&quot;let type of pokemon?.types&quot; value&#x3D;&quot;type.slot&quot;&gt;{{ type.type.name }}&lt;/option&gt;
-          &lt;/select&gt;
         &lt;/div&gt;
 
         &lt;div class&#x3D;&quot;form-group col-md-2&quot;&gt;
@@ -591,7 +584,7 @@ export class PokemonsFormComponent implements OnInit {
           &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;weight&quot; formControlName&#x3D;&quot;weight&quot; readonly&gt;
         &lt;/div&gt;
 
-        &lt;div class&#x3D;&quot;form-group col-md-12&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-6 mb-2&quot;&gt;
           &lt;div class&#x3D;&quot;card&quot;&gt;
             &lt;div class&#x3D;&quot;card-header&quot;&gt;Habilidades&lt;/div&gt;
             &lt;table class&#x3D;&quot;table table-responsive-sm&quot;&gt;
@@ -604,9 +597,21 @@ export class PokemonsFormComponent implements OnInit {
               &lt;/tbody&gt;
             &lt;/table&gt;
           &lt;/div&gt;
-          &lt;!-- &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect02&quot; formControlName&#x3D;&quot;ability&quot;&gt;
-            &lt;option *ngFor&#x3D;&quot;let ability of pokemon?.abilities&quot; value&#x3D;&quot;ability.slot&quot;&gt;{{ ability.ability.name }}&lt;/option&gt;
-          &lt;/select&gt; --&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+          &lt;div class&#x3D;&quot;card&quot;&gt;
+            &lt;div class&#x3D;&quot;card-header&quot;&gt;Tipos&lt;/div&gt;
+            &lt;table class&#x3D;&quot;table table-responsive-sm&quot;&gt;
+              &lt;tbody&gt;
+                &lt;tr *ngFor&#x3D;&quot;let type of pokemon?.types&quot;&gt;
+                  &lt;td&gt;
+                    {{ type.type.name }}
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -651,7 +656,7 @@ export class PokemonsFormComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row mb-4">  <div class="col-md">    <a routerLink="/" class="btn btn-outline-primary float-right">      << Voltar    </a>  </div></div><form [formGroup]="pokeForm" *ngIf="pokemon">  <div class="card">    <div class="card-header bg-primary text-light">      Informações sobre <strong>{{ pokemon?.name }}</strong>    </div>    <div class="card-body">      <div class="form-row">        <div class="form-group col-md-2">          <img [src]="pokemon?.sprites.front_default"/>        </div>        <div class="form-group col-md-4">          <label for="name">Nome</label>          <input type="text" class="form-control" id="name" formControlName="name" readonly>        </div>        <div class="form-group col-md-2">          <label for="type">Tipo</label>          <select class="custom-select" id="inputGroupSelect01" formControlName="type">            <option *ngFor="let type of pokemon?.types" value="type.slot">{{ type.type.name }}</option>          </select>        </div>        <div class="form-group col-md-2">          <label for="height">Altura</label>          <input type="text" class="form-control" id="height" formControlName="height" readonly>        </div>        <div class="form-group col-md-2">          <label for="weight">Peso</label>          <input type="text" class="form-control" id="weight" formControlName="weight" readonly>        </div>        <div class="form-group col-md-12">          <div class="card">            <div class="card-header">Habilidades</div>            <table class="table table-responsive-sm">              <tbody>                <tr *ngFor="let ability of pokemon?.abilities">                  <td>                    {{ ability.ability.name }}                  </td>                </tr>              </tbody>            </table>          </div>          <!-- <select class="custom-select" id="inputGroupSelect02" formControlName="ability">            <option *ngFor="let ability of pokemon?.abilities" value="ability.slot">{{ ability.ability.name }}</option>          </select> -->        </div>      </div>    </div>  </div></form><div class="alert alert-danger" role="alert" *ngIf="error !== undefined">  Erro ao retornar dados: {{ error }}. Tente novamente mais tarde.</div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row mb-4">  <div class="col-md">    <a routerLink="/" class="btn btn-outline-primary float-right">      << Voltar    </a>  </div></div><form [formGroup]="pokeForm" *ngIf="pokemon">  <div class="card">    <div class="card-header bg-primary text-light">      Informações sobre <strong>{{ pokemon?.name }}</strong>    </div>    <div class="card-body">      <div class="form-row">        <div class="form-group col-md-2">          <img [src]="pokemon?.sprites.front_default"/>        </div>        <div class="form-group col-md-6">          <label for="name">Nome</label>          <input type="text" class="form-control" id="name" formControlName="name" readonly>        </div>        <div class="form-group col-md-2">          <label for="height">Altura</label>          <input type="text" class="form-control" id="height" formControlName="height" readonly>        </div>        <div class="form-group col-md-2">          <label for="weight">Peso</label>          <input type="text" class="form-control" id="weight" formControlName="weight" readonly>        </div>        <div class="col-md-6 mb-2">          <div class="card">            <div class="card-header">Habilidades</div>            <table class="table table-responsive-sm">              <tbody>                <tr *ngFor="let ability of pokemon?.abilities">                  <td>                    {{ ability.ability.name }}                  </td>                </tr>              </tbody>            </table>          </div>        </div>        <div class="col-md-6">          <div class="card">            <div class="card-header">Tipos</div>            <table class="table table-responsive-sm">              <tbody>                <tr *ngFor="let type of pokemon?.types">                  <td>                    {{ type.type.name }}                  </td>                </tr>              </tbody>            </table>          </div>        </div>      </div>    </div>  </div></form><div class="alert alert-danger" role="alert" *ngIf="error !== undefined">  Erro ao retornar dados: {{ error }}. Tente novamente mais tarde.</div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'PokemonsFormComponent', 'selector': 'app-pokemons-form'},{'name': 'PokemonsListComponent', 'selector': 'app-pokemons-list'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PokemonsFormComponent'};

@@ -18,16 +18,9 @@
           <img [src]="pokemon?.sprites.front_default"/>
         </div>
 
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
           <label for="name">Nome</label>
           <input type="text" class="form-control" id="name" formControlName="name" readonly>
-        </div>
-
-        <div class="form-group col-md-2">
-          <label for="type">Tipo</label>
-          <select class="custom-select" id="inputGroupSelect01" formControlName="type">
-            <option *ngFor="let type of pokemon?.types" value="type.slot">{{ type.type.name }}</option>
-          </select>
         </div>
 
         <div class="form-group col-md-2">
@@ -40,7 +33,7 @@
           <input type="text" class="form-control" id="weight" formControlName="weight" readonly>
         </div>
 
-        <div class="form-group col-md-12">
+        <div class="col-md-6 mb-2">
           <div class="card">
             <div class="card-header">Habilidades</div>
             <table class="table table-responsive-sm">
@@ -53,9 +46,21 @@
               </tbody>
             </table>
           </div>
-          <!-- <select class="custom-select" id="inputGroupSelect02" formControlName="ability">
-            <option *ngFor="let ability of pokemon?.abilities" value="ability.slot">{{ ability.ability.name }}</option>
-          </select> -->
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">Tipos</div>
+            <table class="table table-responsive-sm">
+              <tbody>
+                <tr *ngFor="let type of pokemon?.types">
+                  <td>
+                    {{ type.type.name }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
