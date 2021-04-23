@@ -275,8 +275,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/features/pokemons/pokemons-list/pokemons-list.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/features/pokemons/pokemons-list/pokemons-list.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -426,8 +426,8 @@ registros para serem exibidos. </p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/features/pokemons/pokemons-list/pokemons-list.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/features/pokemons/pokemons-list/pokemons-list.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -575,7 +575,6 @@ export class PokemonsListComponent implements OnInit {
   /** Método que realiza a abertura do modal para apresentação dos tipos de um pokemon. */
   openTypes(content): void {
     this.modalService.open(content);
-    console.log(this.pokemons);
   }
 
   /** Método que avança 1 página para carregamento de mais registros. */
@@ -596,46 +595,52 @@ export class PokemonsListComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;table class&#x3D;&quot;table table-striped&quot;&gt;
-  &lt;thead&gt;
-  &lt;tr&gt;
-    &lt;th scope&#x3D;&quot;col&quot; *ngFor&#x3D;&quot;let column of columns&quot;&gt;{{ column }}&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody *ngIf&#x3D;&quot;pokemons&quot;&gt;
-  &lt;tr *ngFor&#x3D;&quot;let pokemon of pokemons; index as i&quot;&gt;
-    &lt;td&gt;
-      {{ pokemon?.id }}
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a [routerLink]&#x3D;&quot;pokemon?.id&quot;&gt;{{ pokemon?.name }}&lt;/a&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;a type&#x3D;&quot;link&quot; href&#x3D;&quot;#&quot; (click)&#x3D;&quot;openTypes(content)&quot;&gt;Visualizar&lt;/a&gt;
-      &lt;ng-template #content let-modal&gt;
-        &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close float-right&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modal.dismiss()&quot;&gt;
-            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
-          &lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;modal-body&quot;&gt;
-          &lt;ul class&#x3D;&quot;list-group&quot;&gt;
-            &lt;li class&#x3D;&quot;list-group-item&quot; *ngFor&#x3D;&quot;let type of pokemon?.types; index as i&quot;&gt;
-              &lt;strong&gt;{{i}} - &lt;/strong&gt; {{ type.type.name }}
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/ng-template&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      {{ pokemon?.height }}
-    &lt;/td&gt;
-    &lt;td&gt;
-      {{ pokemon?.weight }}
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card mb-2&quot;&gt;
+  &lt;div class&#x3D;&quot;card-header bg-primary text-light&quot;&gt;
+    &lt;strong&gt;Lista de Pokemons&lt;/strong&gt;
+  &lt;/div&gt;
+
+  &lt;table class&#x3D;&quot;table table-striped table-responsive-sm&quot;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope&#x3D;&quot;col&quot; *ngFor&#x3D;&quot;let column of columns&quot;&gt;{{ column }}&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody *ngIf&#x3D;&quot;pokemons &amp;&amp; pokemons[0] !&#x3D;&#x3D; &#x27;error&#x27;&quot;&gt;
+    &lt;tr *ngFor&#x3D;&quot;let pokemon of pokemons; index as i&quot;&gt;
+      &lt;td&gt;
+        {{ pokemon?.id }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a [routerLink]&#x3D;&quot;pokemon?.id&quot;&gt;{{ pokemon?.name }}&lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a type&#x3D;&quot;link&quot; href&#x3D;&quot;#&quot; (click)&#x3D;&quot;openTypes(content)&quot;&gt;Visualizar&lt;/a&gt;
+        &lt;ng-template #content let-modal&gt;
+          &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close float-right&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modal.dismiss()&quot;&gt;
+              &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+            &lt;ul class&#x3D;&quot;list-group&quot;&gt;
+              &lt;li class&#x3D;&quot;list-group-item&quot; *ngFor&#x3D;&quot;let type of pokemon?.types; index as i&quot;&gt;
+                &lt;strong&gt;{{i}} - &lt;/strong&gt; {{ type.type.name }}
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/ng-template&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ pokemon?.height }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ pokemon?.weight }}
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;div class&#x3D;&quot;container d-flex justify-content-center mb-2&quot;&gt;
   &lt;a class&#x3D;&quot;page-link&quot; aria-label&#x3D;&quot;Previous&quot; (click)&#x3D;&quot;previous()&quot;&gt;
@@ -646,6 +651,10 @@ export class PokemonsListComponent implements OnInit {
     &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;raquo;&lt;/span&gt;
     &lt;span class&#x3D;&quot;sr-only&quot;&gt;Avançar&lt;/span&gt;
   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;alert alert-danger&quot; role&#x3D;&quot;alert&quot; *ngIf&#x3D;&quot;pokemons[0] &#x3D;&#x3D;&#x3D; &#x27;error&#x27;&quot;&gt;
+  Erro ao retornar dados: {{ pokemons[1] }}. Tente novamente mais tarde.
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -682,7 +691,7 @@ export class PokemonsListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><table class="table table-striped">  <thead>  <tr>    <th scope="col" *ngFor="let column of columns">{{ column }}</th>  </tr>  </thead>  <tbody *ngIf="pokemons">  <tr *ngFor="let pokemon of pokemons; index as i">    <td>      {{ pokemon?.id }}    </td>    <td>      <a [routerLink]="pokemon?.id">{{ pokemon?.name }}</a>    </td>    <td>      <a type="link" href="#" (click)="openTypes(content)">Visualizar</a>      <ng-template #content let-modal>        <div class="modal-header">          <button type="button" class="close float-right" aria-label="Close" (click)="modal.dismiss()">            <span aria-hidden="true">&times;</span>          </button>        </div>        <div class="modal-body">          <ul class="list-group">            <li class="list-group-item" *ngFor="let type of pokemon?.types; index as i">              <strong>{{i}} - </strong> {{ type.type.name }}            </li>          </ul>        </div>      </ng-template>    </td>    <td>      {{ pokemon?.height }}    </td>    <td>      {{ pokemon?.weight }}    </td>  </tr>  </tbody></table><div class="container d-flex justify-content-center mb-2">  <a class="page-link" aria-label="Previous" (click)="previous()">    <span aria-hidden="true">&laquo;</span>    <span class="sr-only">Voltar</span>  </a>  <a class="page-link" aria-label="Next" (click)="next()">    <span aria-hidden="true">&raquo;</span>    <span class="sr-only">Avançar</span>  </a></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="card mb-2">  <div class="card-header bg-primary text-light">    <strong>Lista de Pokemons</strong>  </div>  <table class="table table-striped table-responsive-sm">    <thead>    <tr>      <th scope="col" *ngFor="let column of columns">{{ column }}</th>    </tr>    </thead>    <tbody *ngIf="pokemons && pokemons[0] !== \'error\'">    <tr *ngFor="let pokemon of pokemons; index as i">      <td>        {{ pokemon?.id }}      </td>      <td>        <a [routerLink]="pokemon?.id">{{ pokemon?.name }}</a>      </td>      <td>        <a type="link" href="#" (click)="openTypes(content)">Visualizar</a>        <ng-template #content let-modal>          <div class="modal-header">            <button type="button" class="close float-right" aria-label="Close" (click)="modal.dismiss()">              <span aria-hidden="true">&times;</span>            </button>          </div>          <div class="modal-body">            <ul class="list-group">              <li class="list-group-item" *ngFor="let type of pokemon?.types; index as i">                <strong>{{i}} - </strong> {{ type.type.name }}              </li>            </ul>          </div>        </ng-template>      </td>      <td>        {{ pokemon?.height }}      </td>      <td>        {{ pokemon?.weight }}      </td>    </tr>    </tbody>  </table></div><div class="container d-flex justify-content-center mb-2">  <a class="page-link" aria-label="Previous" (click)="previous()">    <span aria-hidden="true">&laquo;</span>    <span class="sr-only">Voltar</span>  </a>  <a class="page-link" aria-label="Next" (click)="next()">    <span aria-hidden="true">&raquo;</span>    <span class="sr-only">Avançar</span>  </a></div><div class="alert alert-danger" role="alert" *ngIf="pokemons[0] === \'error\'">  Erro ao retornar dados: {{ pokemons[1] }}. Tente novamente mais tarde.</div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'PokemonsFormComponent', 'selector': 'app-pokemons-form'},{'name': 'PokemonsListComponent', 'selector': 'app-pokemons-list'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PokemonsListComponent'};

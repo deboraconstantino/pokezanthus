@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PokemonsFormComponent implements OnInit {
   pokeForm: FormGroup;
   pokemon: any;
+  error: string;
 
   /** Método constructor */
   constructor(
@@ -52,7 +53,7 @@ export class PokemonsFormComponent implements OnInit {
         this.pokemon = res,
         this.pokeForm.patchValue(this.pokemon);
       },
-      err => console.log(err)
+      err => this.error = err.message
     );
   }
 }

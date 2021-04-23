@@ -30,7 +30,6 @@ export class PokemonsListComponent implements OnInit {
   /** Método que realiza a abertura do modal para apresentação dos tipos de um pokemon. */
   openTypes(content): void {
     this.modalService.open(content);
-    console.log(this.pokemons);
   }
 
   /** Método que avança 1 página para carregamento de mais registros. */

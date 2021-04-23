@@ -1,6 +1,6 @@
 <div class="row mb-4">
   <div class="col-md">
-    <a routerLink="/" class="btn btn-light float-right">
+    <a routerLink="/" class="btn btn-outline-primary float-right">
       << Voltar
     </a>
   </div>
@@ -8,7 +8,7 @@
 
 <form [formGroup]="pokeForm" *ngIf="pokemon">
   <div class="card">
-    <div class="card-header">
+    <div class="card-header bg-primary text-light">
       Informações sobre <strong>{{ pokemon?.name }}</strong>
     </div>
 
@@ -50,3 +50,7 @@
     </div>
   </div>
 </form>
+
+<div class="alert alert-danger" role="alert" *ngIf="error !== undefined">
+  Erro ao retornar dados: {{ error }}. Tente novamente mais tarde.
+</div>

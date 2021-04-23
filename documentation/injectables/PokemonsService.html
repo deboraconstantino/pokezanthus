@@ -246,8 +246,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/shared/services/pokemons.service.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/shared/services/pokemons.service.ts:56</a></div>
                 </td>
             </tr>
 
@@ -492,8 +492,8 @@ pageSize: tamanho da página (sempre 10)</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/shared/services/pokemons.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/shared/services/pokemons.service.ts:61</a></div>
                 </td>
             </tr>
 
@@ -621,10 +621,11 @@ export class PokemonsService {
           b &#x3D;&gt; {
             pokemons.push(b);
             pokemons.sort((x, y) &#x3D;&gt; x.id &lt; y.id ? -1 : x.id &gt; y.id ? 1 : 0);
-            console.log(pokemons);
-          }
+          },
+          err &#x3D;&gt; pokemons.push(&#x27;error&#x27;, err.message)
         )
-      )
+      ),
+      err &#x3D;&gt; pokemons.push(&#x27;error&#x27;, err.message)
     );
 
     return pokemons;

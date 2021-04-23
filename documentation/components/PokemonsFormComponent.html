@@ -137,6 +137,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#error">error</a>
+                            </li>
+                            <li>
                                 <a href="#pokeForm">pokeForm</a>
                             </li>
                             <li>
@@ -188,7 +191,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -285,8 +288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -328,8 +331,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:48</a></div>
                 </td>
             </tr>
 
@@ -369,8 +372,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -396,6 +399,33 @@ visualizado.</p>
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="error"></a>
+                        <span class="name">
+                            <b>
+                            error</b>
+                            <a href="#error"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/features/pokemons/pokemons-form/pokemons-form.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -471,6 +501,7 @@ import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 export class PokemonsFormComponent implements OnInit {
   pokeForm: FormGroup;
   pokemon: any;
+  error: string;
 
   /** Método constructor */
   constructor(
@@ -510,7 +541,7 @@ export class PokemonsFormComponent implements OnInit {
         this.pokemon &#x3D; res,
         this.pokeForm.patchValue(this.pokemon);
       },
-      err &#x3D;&gt; console.log(err)
+      err &#x3D;&gt; this.error &#x3D; err.message
     );
   }
 }
@@ -520,7 +551,7 @@ export class PokemonsFormComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row mb-4&quot;&gt;
   &lt;div class&#x3D;&quot;col-md&quot;&gt;
-    &lt;a routerLink&#x3D;&quot;/&quot; class&#x3D;&quot;btn btn-light float-right&quot;&gt;
+    &lt;a routerLink&#x3D;&quot;/&quot; class&#x3D;&quot;btn btn-outline-primary float-right&quot;&gt;
       &lt;&lt; Voltar
     &lt;/a&gt;
   &lt;/div&gt;
@@ -528,7 +559,7 @@ export class PokemonsFormComponent implements OnInit {
 
 &lt;form [formGroup]&#x3D;&quot;pokeForm&quot; *ngIf&#x3D;&quot;pokemon&quot;&gt;
   &lt;div class&#x3D;&quot;card&quot;&gt;
-    &lt;div class&#x3D;&quot;card-header&quot;&gt;
+    &lt;div class&#x3D;&quot;card-header bg-primary text-light&quot;&gt;
       Informações sobre &lt;strong&gt;{{ pokemon?.name }}&lt;/strong&gt;
     &lt;/div&gt;
 
@@ -570,6 +601,10 @@ export class PokemonsFormComponent implements OnInit {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/form&gt;
+
+&lt;div class&#x3D;&quot;alert alert-danger&quot; role&#x3D;&quot;alert&quot; *ngIf&#x3D;&quot;error !&#x3D;&#x3D; undefined&quot;&gt;
+  Erro ao retornar dados: {{ error }}. Tente novamente mais tarde.
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -605,7 +640,7 @@ export class PokemonsFormComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row mb-4">  <div class="col-md">    <a routerLink="/" class="btn btn-light float-right">      << Voltar    </a>  </div></div><form [formGroup]="pokeForm" *ngIf="pokemon">  <div class="card">    <div class="card-header">      Informações sobre <strong>{{ pokemon?.name }}</strong>    </div>    <div class="card-body">      <div class="form-row">        <div class="form-group col-md-2">          <img [src]="pokemon?.sprites.front_default"/>        </div>        <div class="form-group col-md-4">          <label for="name">Nome</label>          <input type="text" class="form-control" id="name" formControlName="name">        </div>        <div class="form-group col-md-2">          <label for="type">Tipo</label>          <select class="custom-select" id="inputGroupSelect01" formControlName="type">            <option *ngFor="let type of pokemon?.types" value="type.slot">{{ type.type.name }}</option>          </select>        </div>        <div class="form-group col-md-2">          <label for="height">Altura</label>          <input type="text" class="form-control" id="height" formControlName="height">        </div>        <div class="form-group col-md-2">          <label for="weight">Peso</label>          <input type="text" class="form-control" id="weight" formControlName="weight">        </div>        <div class="form-group col-md-12">          <label for="ability">Habilidades</label>          <select class="custom-select" id="inputGroupSelect02" formControlName="ability">            <option *ngFor="let ability of pokemon?.abilities" value="ability.slot">{{ ability.ability.name }}</option>          </select>        </div>      </div>    </div>  </div></form></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row mb-4">  <div class="col-md">    <a routerLink="/" class="btn btn-outline-primary float-right">      << Voltar    </a>  </div></div><form [formGroup]="pokeForm" *ngIf="pokemon">  <div class="card">    <div class="card-header bg-primary text-light">      Informações sobre <strong>{{ pokemon?.name }}</strong>    </div>    <div class="card-body">      <div class="form-row">        <div class="form-group col-md-2">          <img [src]="pokemon?.sprites.front_default"/>        </div>        <div class="form-group col-md-4">          <label for="name">Nome</label>          <input type="text" class="form-control" id="name" formControlName="name">        </div>        <div class="form-group col-md-2">          <label for="type">Tipo</label>          <select class="custom-select" id="inputGroupSelect01" formControlName="type">            <option *ngFor="let type of pokemon?.types" value="type.slot">{{ type.type.name }}</option>          </select>        </div>        <div class="form-group col-md-2">          <label for="height">Altura</label>          <input type="text" class="form-control" id="height" formControlName="height">        </div>        <div class="form-group col-md-2">          <label for="weight">Peso</label>          <input type="text" class="form-control" id="weight" formControlName="weight">        </div>        <div class="form-group col-md-12">          <label for="ability">Habilidades</label>          <select class="custom-select" id="inputGroupSelect02" formControlName="ability">            <option *ngFor="let ability of pokemon?.abilities" value="ability.slot">{{ ability.ability.name }}</option>          </select>        </div>      </div>    </div>  </div></form><div class="alert alert-danger" role="alert" *ngIf="error !== undefined">  Erro ao retornar dados: {{ error }}. Tente novamente mais tarde.</div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'PokemonsFormComponent', 'selector': 'app-pokemons-form'},{'name': 'PokemonsListComponent', 'selector': 'app-pokemons-list'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PokemonsFormComponent'};
