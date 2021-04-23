@@ -14,4 +14,4 @@ Para executar os testes unitários, digitar o comando "ng test" no prompt de com
 
 ## Consultando a Documentação do Código
 
-Para consultar a documentação do código fonte, digitar o comando "compodoc -s" no prompt de comando (repositório local) e acessar a url http://localhost:8080 para acessar.
+Para consultar a documentação do código fonte, digitar o comando "compodoc -s" no prompt de comando (repositório local) e acessar a url http://localhost:8080.
