@@ -6,7 +6,7 @@ PokeZanthus será uma futura nova cidade do universo pokémon! Para que isso oco
 
 1. Digitar o comando "git clone https://github.com/deboraconstantino/pokezanthus.git" no prompt de comando ou terminal do VS Code para copiar o repositório remoto para um repositório local
 2. Digitar o comando "npm install" para baixar todas as dependências necessárias
-3. Digitar o comando "ng serve --prod" ou "ng serve" para subir a aplicação
+3. Digitar o comando "ng serve --prod" ou "ng serve" para subir a aplicação e acessar a url http://localhost:4200 para acessar
 
 ## Executando testes unitários
 
@@ -14,4 +14,4 @@ Para executar os testes unitários, digitar o comando "ng test" no prompt de com
 
 ## Consultando a Documentação do Código
 
-Para consultar a documentação do código fonte, digitar o comando "compodoc -s" no prompt de comando.
+Para consultar a documentação do código fonte, digitar o comando "compodoc -s" no prompt de comando e acessar a url http://localhost:8080 para acessar.
