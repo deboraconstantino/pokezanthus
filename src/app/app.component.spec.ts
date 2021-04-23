@@ -19,10 +19,4 @@ describe('O componente AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-
-  it('Deve ter o título de poke-zanthus', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('poke-zanthus');
-  });
 });
