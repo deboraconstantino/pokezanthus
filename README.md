@@ -1,27 +1,17 @@
 # PokeZanthus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+PokeZanthus será uma nova cidade do universo pokémon! Para que isso ocorra, foi necessário desenvolver uma Single Page Application (SPA), para que fosse possível retornar os dados dos Pokemons que habitarão a nova cidade.
 
-## Development server
+## Testando a aplicação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Digitar o comando "git clone https://github.com/deboraconstantino/pokezanthus.git" no prompt de comando ou terminal do VS Code para copiar o repositório remoto para um repositório local
+2. No repositório local do projeto, digitar o comando "npm install" para baixar todas as dependências necessárias
+3. No repositório local do projeto, digitar o comando "ng serve --prod" ou "ng serve" para subir a aplicação e acessar a url http://localhost:4200 para acessar
 
-## Code scaffolding
+## Executando testes unitários
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para executar os testes unitários, digitar o comando "ng test" no prompt de comando (repositório local).
 
-## Build
+## Consultando a Documentação do Código
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para consultar a documentação do código fonte, digitar o comando "compodoc -s" no prompt de comando (repositório local) e acessar a url http://localhost:8080 para acessar.
