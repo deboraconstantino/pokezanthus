@@ -1,6 +1,6 @@
 # PokeZanthus
 
-PokeZanthus será uma futura nova cidade do universo pokémon! Para que isso ocorra, foi necessário desenvolver uma Single Page Application (SPA), para que fosse possível retornar os dados dos Pokemons que habitarão a nova cidade.
+PokeZanthus será uma nova cidade do universo pokémon! Para que isso ocorra, foi necessário desenvolver uma Single Page Application (SPA), para que fosse possível retornar os dados dos Pokemons que habitarão a nova cidade.
 
 ## Testando a aplicação
 
